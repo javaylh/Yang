@@ -17,7 +17,8 @@
 	</properties>
 
 	<modules>
-        <module>dawn-common</module>
+        <module>dawn-core</module>
+		<module>dawn-common</module>
     </modules>
 
 </project>
