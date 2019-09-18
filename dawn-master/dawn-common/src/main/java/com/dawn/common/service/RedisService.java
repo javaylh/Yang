@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * ---------------------------
- * 操作redis的服务类 (RedisService)
+ * 封装的redis方法 (RedisService)
  * ---------------------------
  * @author： ylh
  * 时间： 2019-09-17 16:30:00

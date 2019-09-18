@@ -1,0 +1,11 @@
+#rabbitmq配置
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: woxu
+    password: 123456
+    listener:
+      simple:
+        #表示启动消费方的手动确认
+        acknowledge-mode: manual

@@ -38,6 +38,12 @@
 			<version>0.0.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.dawn</groupId>
+			<artifactId>dawn-rabbitmq</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -65,7 +71,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<finalName>dawn-web-service</finalName>
-					<mainClass>com.dawn.dawnweb.DawnWebApplication</mainClass>
+					<mainClass>com.dawn.web.DawnWebApplication</mainClass>
 					<layout>JAR</layout>
 				</configuration>
 			</plugin>

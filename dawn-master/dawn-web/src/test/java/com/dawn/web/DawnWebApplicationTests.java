@@ -1,4 +1,4 @@
-package com.dawn.dawnweb;
+package com.dawn.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

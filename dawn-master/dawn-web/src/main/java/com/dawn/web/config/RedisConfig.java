@@ -1,4 +1,4 @@
-package com.dawn.dawnweb.config;
+package com.dawn.web.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.EnableCaching;

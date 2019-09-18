@@ -1,4 +1,4 @@
-package com.dawn.dawnweb.config;
+package com.dawn.web.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

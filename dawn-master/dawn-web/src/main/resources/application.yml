@@ -5,6 +5,8 @@ server:
         min-spare-threads: 30
         port: 8090
 spring:
+    profiles:
+        active: rabbitmq
     jackson:
         date-format: yyyy-MM-dd HH:mm:ss
         time-zone: GMT+8

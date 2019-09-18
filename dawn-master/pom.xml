@@ -23,6 +23,7 @@
 		<module>dawn-dao</module>
 		<module>dawn-service</module>
 		<module>dawn-web</module>
+		<module>dawn-rabbitmq</module>
     </modules>
 
 </project>
