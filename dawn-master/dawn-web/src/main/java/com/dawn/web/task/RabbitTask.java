@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * ---------------------------
- * Dawn定时任务 (DawnTask)
+ * 消息队列定时任务 (RabbitTask)
  * ---------------------------
  * @author： ylh
  * 时间： 2019-09-18 17:08:00
@@ -18,18 +18,17 @@ import org.springframework.stereotype.Component;
 @Component
 @EnableAsync
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class DawnTask {
+public class RabbitTask {
 
     private final AsyncDawnTask asyncDawnTask;
 
     /**
-     * Dawn定时任务
-     * 当前cron：每隔1分钟执行一次
-     * cron = "${task.track.taskTrackCleaning}" 可写入配置文件中，易于维护
+     * Dawn定时任务--消息队列
+     * ${dawn.task.sendrabbit}：每隔1分钟执行一次
      * @return
      */
-    @Scheduled(cron = "0 */1 * * * ?")
-    public void taskSendRabbit() throws Exception {
+    @Scheduled(cron = "${dawn.task.sendrabbit}")
+    public void taskSendRabbit() {
         asyncDawnTask.taskDawnExecutor();
     }
 

@@ -26,7 +26,7 @@ public class AsyncDawnTask {
     /**
      * 定时发送rabbitmq队列
      */
-    @Async("taskExecutor")
+    @Async
     public void taskDawnExecutor() {
         send.sendTest("test" + NumberUtil.generateRandomNumber(0, 1000, 1)[0]);
     }

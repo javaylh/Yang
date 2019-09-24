@@ -34,25 +34,41 @@ spring:
           pool-prepared-statements: true
           max-open-prepared-statements: 50
           max-pool-prepared-statement-per-connection-size: 20
-    ## Redis 配置
+    devtools:
+        restart:
+            # 设置开启热部署
+            enabled: true
+            #重启服务的文件夹目录
+            additional-paths: src/main/java
+            #不重启服务的文件夹配置
+            exclude: META-INF/maven/**,META-INF/resouces/**,resources/**, static/**,public/**,templates/**,**/*Test.class,**/*Tests.class,git.properties
+    # Redis 配置
     redis:
-        ## Redis数据库索引（默认为0）
+        # Redis数据库索引（默认为0）
         database: 0
-        ## Redis服务器地址
+        # Redis服务器地址
         host: 127.0.0.1
-        ## Redis服务器连接端口
+        # Redis服务器连接端口
         port: 6379
-        ## Redis服务器连接密码（默认为空）
+        # Redis服务器连接密码（默认为空）
         password: 123456
         jedis:
             pool:
-                ## 连接池最大连接数（使用负值表示没有限制）
+                # 连接池最大连接数（使用负值表示没有限制）
                 max-active: -1
-                ## 连接池最大阻塞等待时间（使用负值表示没有限制）
+                # 连接池最大阻塞等待时间（使用负值表示没有限制）
                 max-wait: -1
-                ## 连接池中的最大空闲连接
+                # 连接池中的最大空闲连接
                 max-idle: 1000
-                ## 连接池中的最小空闲连接
+                # 连接池中的最小空闲连接
                 min-idle: 0
-        ## 连接超时时间（毫秒）
+        # 连接超时时间（毫秒）
         timeout: 1200
+# 项目自定义配置项
+dawn:
+    # 定时任务
+    task:
+        # 发送队列  1分钟执行一次
+        sendrabbit: 0 */1 * * * ?
+        # 发送WebSocket  2秒执行一次
+        sendwebsocket: 0/2 * * * * ?

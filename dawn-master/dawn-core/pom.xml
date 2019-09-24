@@ -12,7 +12,17 @@
 	<artifactId>dawn-core</artifactId>
 	<version>0.0.1</version>
 	<name>dawn-core</name>
-	<description>`dawn`核心依赖模块</description>
+	<description>`dawn`核心依赖模块
+		<!--scope标签：-->
+			<!--compile：默认的scope，表示 dependency 都可以在生命周期中使用。-->
+			<!--而且，这些dependencies 会传递到依赖的项目中。适用于所有阶段，会随着项目一起发布。-->
+			<!--provided：跟compile相似，但是表明了dependency 由JDK或者容器提供，例如Servlet AP和一些-->
+		    <!--Java EE APIs。这个scope 只能作用在编译和测试时，同时没有传递性。-->
+			<!--runtime：表示dependency不作用在编译时，但会作用在运行和测试时，如JDBC驱动，适用运行和测试阶段。-->
+			<!--test：表示dependency作用在测试时，不作用在运行时。 只在测试时使用，-->
+			<!--用于编译和运行测试代码。不会随项目发布。-->
+			<!--system：跟provided 相似，但是在系统中要以外部JAR包的形式提供，maven不会在repository查找它。-->
+	</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,6 +47,14 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!--热部署（无需重启应用）：需按IDEA的编译或者ctrl+f9,eclipse：ctrl+s-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
 
 		<!--Java注释库，有助于减少样板代码-->
