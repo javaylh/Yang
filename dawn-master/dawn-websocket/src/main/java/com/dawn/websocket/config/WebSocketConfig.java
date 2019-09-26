@@ -1,38 +1,23 @@
 package com.dawn.websocket.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.web.socket.config.annotation.EnableWebSocket;
-import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
-import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
-import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
+import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 /**
  * ---------------------------
- * WebSocket配置 (WebSocketConfig)
+ * 这个bean会自动注册使用了@ServerEndpoint注解声明的Websocket endpoint
  * ---------------------------
- * @author： ylh
- * 时间： 2019-09-19 13:30:00
+ * @author： YangLiHua
+ * 时间： 2019-09-26 16:00:00
  * ---------------------------
  */
 @Configuration
-@EnableWebSocket
-@EnableWebSocketMessageBroker
-public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
+public class WebSocketConfig {
 
-    @Override
-    public void registerStompEndpoints(StompEndpointRegistry registry) {
-        // 注册一个 /notification 端点，前端通过这个端点进行连接
-        registry.addEndpoint("/notification")
-                //解决跨域问题
-                .setAllowedOrigins("*")
-                .withSockJS();
-    }
-
-    @Override
-    public void configureMessageBroker(MessageBrokerRegistry registry) {
-        //定义了一个客户端订阅地址的前缀信息，也就是客户端接收服务端发送消息的前缀信息
-        registry.enableSimpleBroker("/topic");
+    @Bean
+    public ServerEndpointExporter serverEndpointExporter() {
+        return new ServerEndpointExporter();
     }
 
 }
