@@ -1,5 +1,6 @@
 package com.dawn.web.task;
 
+import com.dawn.common.service.RedisService;
 import com.dawn.web.task.async.AsyncDawnTask;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,10 @@ public class RabbitTask {
 
     private final AsyncDawnTask asyncDawnTask;
 
+    private final RedisService redisService;
+
+    private Integer count = 0;
+
     /**
      * Dawn定时任务--消息队列
      * ${dawn.task.sendrabbit}：每隔1分钟执行一次
@@ -29,6 +34,12 @@ public class RabbitTask {
      */
     @Scheduled(cron = "${dawn.task.sendrabbit}")
     public void taskSendRabbit() {
+        // 这个就是判断这个count在redis里面是否存在
+        if (redisService.hasKey("count")) {
+            count = Integer.valueOf(redisService.get("count"));
+            count++;
+        }
+        redisService.set("count", count.toString());
         asyncDawnTask.taskDawnExecutor();
     }
 
