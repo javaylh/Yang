@@ -11,8 +11,8 @@ package com.dawn.websocket.constant;
 public class WebSocketConsts {
 
     /**
-     * 服务器信息推送路径
+     * 聊天室WebSocket路径
      */
-    public final static String PUSH_SERVER = "/topic/server";
+    public final static String CHATROOM_SERVER = "/webSocket/chatroom";
 
 }
