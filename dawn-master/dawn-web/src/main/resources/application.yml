@@ -69,6 +69,6 @@ dawn:
     # 定时任务
     task:
         # 发送队列  1分钟执行一次
-        sendrabbit: 0 */1 * * * ?
+        send-rabbit: 0 */1 * * * ?
         # 发送WebSocket  2秒执行一次
         sendwebsocket: 0/2 * * * * ?

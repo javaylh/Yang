@@ -63,7 +63,8 @@ export default {
     i18n: 'I18n',
     externalLink: 'External Link',
     donate: 'Donate',
-    profile: 'Profile'
+    profile: 'Profile',
+    chatRoom: 'Chatroom'
   },
   navbar: {
     dashboard: 'Dashboard',

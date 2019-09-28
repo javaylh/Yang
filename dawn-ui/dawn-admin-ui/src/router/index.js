@@ -397,6 +397,19 @@ export const asyncRoutes = [
   },
 
   {
+    path: '/chat',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/chat-room/index'),
+        name: 'ChatRoom',
+        meta: { title: 'chatRoom', icon: 'wechat' }
+      }
+    ]
+  },
+
+  {
     path: 'donate',
     component: Layout,
     children: [

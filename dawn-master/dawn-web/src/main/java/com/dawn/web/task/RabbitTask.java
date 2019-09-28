@@ -29,10 +29,10 @@ public class RabbitTask {
 
     /**
      * Dawn定时任务--消息队列
-     * ${dawn.task.sendrabbit}：每隔1分钟执行一次
+     * ${dawn.task.send-rabbit}：每隔1分钟执行一次
      * @return
      */
-    @Scheduled(cron = "${dawn.task.sendrabbit}")
+    @Scheduled(cron = "${dawn.task.send-rabbit}")
     public void taskSendRabbit() {
         // 这个就是判断这个count在redis里面是否存在
         if (redisService.hasKey("count")) {

@@ -63,7 +63,8 @@ export default {
     i18n: '国际化',
     externalLink: '毒鸡汤外链',
     donate: '打赏',
-    profile: '个人中心'
+    profile: '个人中心',
+    chatRoom: '聊天室'
   },
   navbar: {
     dashboard: '首页',

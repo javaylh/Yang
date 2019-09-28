@@ -173,8 +173,12 @@ npm install --registry=https://registry.npm.taobao.org
 # 启动服务
 npm run dev
 ```
+can't not find 'xxModule' - 找不到某些依赖或者模块
+这种情况一般报错信息可以看到是哪个包抛出的信息. 一般卸载这个模块,安装重新安装下即可.
 
-浏览器访问 http://localhost:9527
+npm uninstall -g @vue/cli-shared-utils
+npm install -g @vue/cli-shared-utils
+
 
 ## 发布
 
