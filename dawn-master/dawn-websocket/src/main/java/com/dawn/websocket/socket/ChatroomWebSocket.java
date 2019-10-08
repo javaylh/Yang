@@ -101,7 +101,7 @@ public class ChatroomWebSocket {
      */
     @OnError
     public void onError(Session session, Throwable error) {
-        log.error("chatroomWebSocket发生错误{}:", error.getMessage());
+        log.error("An error occurred in WebSocket", error);
     }
 
     // -------------------------------------------------------------------------- Private method start
@@ -129,7 +129,7 @@ public class ChatroomWebSocket {
                     session.getBasicRemote().sendText(message);
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("IO exception occurred while WebSocket was sending a message", e);
             }
         }
     }
@@ -168,7 +168,7 @@ public class ChatroomWebSocket {
                     session.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("IO exception occurred when closing a connection to a WebSocket connection", e);
             }
         }
     }

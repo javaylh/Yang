@@ -15,4 +15,14 @@ public class ConfigConsts {
      */
     public static final String UTF8 = "UTF-8";
 
+    /**
+     * Api 版本控制方式：URL 通过请求路径
+     */
+    public static final String API_VERSION_MODE_URL = "URL";
+
+    /**
+     * Api 版本控制方式：HEADER 通过请求头参数
+     */
+    public static final String API_VERSION_MODE_HEADER = "HEADER";
+
 }
