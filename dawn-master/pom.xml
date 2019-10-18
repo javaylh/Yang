@@ -25,6 +25,8 @@
 		<module>dawn-web</module>
 		<module>dawn-rabbitmq</module>
 		<module>dawn-websocket</module>
+		<module>dawn-dubbo</module>
+		<module>dawn-upms</module>
     </modules>
 
 </project>

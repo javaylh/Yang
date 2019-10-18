@@ -3,13 +3,10 @@ server:
         uri-encoding: UTF-8
         max-threads: 1000
         min-spare-threads: 30
-    port: 8090
+    port: 8091
 spring:
     application:
-        name: dawn-web
-    profiles:
-        # 激活一个或者多个配置文件逗号隔开
-        active: rabbitmq
+        name: dawn-upms
     jackson:
         date-format: yyyy-MM-dd HH:mm:ss
         time-zone: GMT+8
@@ -72,23 +69,20 @@ embedded:
     zookeeper:
         port: 2181
 dubbo:
+    scan:
+        base-packages: com.dawn.upms.service.impl
     # application:
         # 提供/消费方应用名，用于计算依赖关系 默认值：${spring.application.name}
-        # name: dawn-web
+        # name: dawn-upms
     registry:
-        # 使用zookeeper广播注册中心暴露服务地址
-        address: zookeeper://127.0.0.1:${embedded.zookeeper.port}
         # 使用文件缓存注册中心地址列表及服务提供者列表，应用重启时将基于此文件恢复，注意：两个注册中心不能使用同一文件存储
         file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
-    consumer:
-        timeout: 1000
-        # 启动时检查依赖的服务是否可用，不可用时会抛出异常
-        # check: false
+        # 使用zookeeper广播注册中心暴露服务地址
+        address: zookeeper://127.0.0.1:${embedded.zookeeper.port}
+        # 使用 zkclient 客户端
+        # client: zkclient
+    # 用dubbo协议在20880端口暴露服务
+    protocol:
+        name: dubbo
+        port: -1
 # 项目自定义配置项
-dawn:
-    # 定时任务
-    task:
-        # 发送队列  1分钟执行一次
-        send-rabbit: 0 */1 * * * ?
-        # 发送WebSocket  2秒执行一次
-        sendwebsocket: 0/2 * * * * ?

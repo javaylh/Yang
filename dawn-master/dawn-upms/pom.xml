@@ -9,20 +9,27 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dawn</groupId>
-	<artifactId>dawn-web</artifactId>
+	<artifactId>dawn-upms</artifactId>
 	<version>0.0.1</version>
-	<name>dawn-web</name>
-	<description>`dawn`表现及控制模块</description>
+	<name>dawn-upms</name>
+	<description>`dawn`权限管理模块</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<shiro.version>1.4.0</shiro.version>
 	</properties>
 
 	<dependencies>
 
 		<dependency>
 			<groupId>com.dawn</groupId>
-			<artifactId>dawn-model</artifactId>
+			<artifactId>dawn-common</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.dawn</groupId>
+			<artifactId>dawn-dubbo</artifactId>
 			<version>0.0.1</version>
 		</dependency>
 
@@ -33,34 +40,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.dawn</groupId>
-			<artifactId>dawn-common</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.dawn</groupId>
-			<artifactId>dawn-rabbitmq</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.dawn</groupId>
-			<artifactId>dawn-websocket</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.dawn</groupId>
-			<artifactId>dawn-dubbo</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-
-		<!-- 二维码相关依赖 -->
-		<dependency>
-			<groupId>com.google.zxing</groupId>
-			<artifactId>core</artifactId>
-			<version>3.3.3</version>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>${shiro.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -83,14 +65,14 @@
 				<filtering>true</filtering>
 			</resource>
 		</resources>
-		<!--当web模块只是被其他模块作为基础模块调用时，则不使用spring-boot-maven-plugin打包-->
+		<!--当upms模块只是被其他模块作为基础模块调用时，则不使用spring-boot-maven-plugin打包-->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<finalName>dawn-web-service</finalName>
-					<mainClass>com.dawn.web.DawnWebApplication</mainClass>
+					<finalName>dawn-upms-service</finalName>
+					<mainClass>com.dawn.upms.DawnUpmsApplication</mainClass>
 					<layout>JAR</layout>
 				</configuration>
 			</plugin>
