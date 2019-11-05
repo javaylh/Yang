@@ -1,0 +1,10 @@
+${AnsiColor.CYAN}
+ .oooooo..o             oooo               o8o
+d8P'    `Y8             `888               `"'
+Y88bo.      oooo    ooo  888  oooo    ooo oooo   .oooo.
+ `"Y8888o.   `88.  .8'   888   `88.  .8'  `888  `P  )88b
+     `"Y88b   `88..8'    888    `88..8'    888   .oP"888
+oo     .d8P    `888'     888     `888'     888  d8(  888
+8""88888P'      .8'     o888o     `8'     o888o `Y888""8o
+            .o..P'
+            `Y8P'
