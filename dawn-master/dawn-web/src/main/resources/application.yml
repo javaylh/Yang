@@ -48,7 +48,7 @@ spring:
     # Redis 配置
     redis:
         # Redis数据库索引（默认为0）
-        database: 0
+        database: 1
         # Redis服务器地址
         host: 127.0.0.1
         # Redis服务器连接端口
@@ -81,7 +81,7 @@ dubbo:
         # 使用文件缓存注册中心地址列表及服务提供者列表，应用重启时将基于此文件恢复，注意：两个注册中心不能使用同一文件存储
         file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
     consumer:
-        timeout: 1000
+        timeout: 3000
         # 启动时检查依赖的服务是否可用，不可用时会抛出异常
         # check: false
 # 项目自定义配置项

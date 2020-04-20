@@ -6,9 +6,12 @@ import com.dawn.common.page.PageResult;
 import java.util.List;
 
 /**
- * 通用CURD接口
- *
- * @author chenwei
+ * ---------------------------
+ * 通用CURD接口 (ServiceCurdService<T>)
+ * ---------------------------
+ * @author： ylh
+ * 时间： 2019-09-17 16:30:00
+ * ---------------------------
  */
 public interface ServiceCurdService<T> {
 
@@ -42,7 +45,7 @@ public interface ServiceCurdService<T> {
      * @param id
      * @return
      */
-    T findById(Integer id);
+    T findById(Long id);
 
     /**
      * 分页查询

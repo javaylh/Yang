@@ -9,4 +9,10 @@ package com.dawn.common.constant;
  * ---------------------------
  */
 public class CacheConsts {
+
+    /**
+     * 系统用户使用的缓存名称
+     */
+    public final static String USER_CACHE = "userCache";
+
 }

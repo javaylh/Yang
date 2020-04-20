@@ -25,4 +25,14 @@ public class ConfigConsts {
      */
     public static final String API_VERSION_MODE_HEADER = "HEADER";
 
+    /**
+     * 启用
+     */
+    public final static int ENABLE = 1;
+
+    /**
+     * 禁用
+     */
+    public final static int DISABLE = 0;
+
 }

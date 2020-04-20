@@ -1,4 +1,4 @@
-package com.dawn.dao;
+package com.dawn.upms.mapper;
 
 import com.dawn.model.User;
 
@@ -7,30 +7,30 @@ import java.util.Map;
 
 /**
  * ---------------------------
- * 用户信息 (User)
+ * 系统用户接口 (UserDao)
  * ---------------------------
- * @author ylh
- * @date 2019-10-18 09:30:00
+ * @author： ylh
+ * @date： 2019-11-07 14:00:00
  * ---------------------------
  */
 public interface UserMapper {
 
 	/**
-	 * 添加用户信息
+	 * 添加系统用户
 	 * @param record
 	 * @return
 	 */
     int add(User record);
 
     /**
-     * 删除用户信息
+     * 删除系统用户
      * @param id
      * @return
      */
     int delete(Long id);
     
     /**
-     * 修改用户信息
+     * 修改系统用户
      * @param record
      * @return
      */
@@ -50,10 +50,24 @@ public interface UserMapper {
     List<User> findPage();
 
     /**
-    * 获取用户信息列表
+    * 获取系统用户列表
     * @param map 查询列表的条件
     * @return
     */
     List<User> findList(Map map);
+
+    /**
+     * 根据用户名查询
+     * @param userName
+     * @return
+     */
+    User findByUserName(String userName);
+
+    /**
+     * 根据授权码查询
+     * @param authCode
+     * @return
+     */
+    User findByAuthCode(String authCode);
     
 }

@@ -1,9 +1,10 @@
 package com.dawn.upms;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 
 /**
@@ -14,7 +15,8 @@ import org.springframework.core.env.Environment;
  * 时间： 2019-10-16 15:20:00
  * ---------------------------
  */
-@EnableAutoConfiguration
+@ComponentScan(basePackages = {"com.dawn.**"})
+@SpringBootApplication(scanBasePackages = {"com.dawn.**"})
 public class DawnUpmsApplication {
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(DawnUpmsApplication.class)

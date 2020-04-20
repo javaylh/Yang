@@ -57,7 +57,6 @@ public class RedisConfig {
         redisTemplate.setHashValueSerializer(valueSerializer());
         log.debug("自定义RedisTemplate加载完成");
         return redisTemplate;
-
     }
 
     private RedisSerializer<String> keySerializer() {

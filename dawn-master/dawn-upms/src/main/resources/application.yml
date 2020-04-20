@@ -45,7 +45,7 @@ spring:
     # Redis 配置
     redis:
         # Redis数据库索引（默认为0）
-        database: 0
+        database: 1
         # Redis服务器地址
         host: 127.0.0.1
         # Redis服务器连接端口
@@ -85,4 +85,6 @@ dubbo:
     protocol:
         name: dubbo
         port: -1
+#mybatis:
+        ##    config-location: classpath*:mapper/*.xml
 # 项目自定义配置项

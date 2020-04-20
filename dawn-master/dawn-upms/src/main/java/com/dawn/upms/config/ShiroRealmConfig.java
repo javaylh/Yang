@@ -25,12 +25,15 @@
 //    @Autowired
 //    private UserService userService;
 //
-//    //角色权限和对应权限添加
+//    /**
+//     * 角色权限和对应权限添加
+//     * @param principalCollection
+//     */
 //    @Override
 //    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-//        //获取登录用户名
-//        String name= (String) principalCollection.getPrimaryPrincipal();
-//        //查询用户名称
+//        // 获取登录用户名
+//        String name = (String) principalCollection.getPrimaryPrincipal();
+//        // 查询用户名称
 //        User user = loginService.findByName(name);
 //        //添加角色和权限
 //        SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
