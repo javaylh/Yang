@@ -8,6 +8,7 @@ import com.dawn.common.constant.AnnotationConsts;
 import com.dawn.common.constant.ConfigConsts;
 import com.dawn.common.page.PageRequest;
 import com.dawn.common.page.PageResult;
+import com.dawn.common.utils.I18nUtils;
 import com.dawn.model.User;
 import com.dawn.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +23,7 @@ import java.util.Map;
  * 用户管理(UserController)
  * ---------------------------
  * @author： ylh
- * 时间： 2020-04-20 15:30:00
+ * @date： 2020-04-20 15:30:00
  * ---------------------------
  */
 @Slf4j
@@ -54,11 +55,9 @@ public class UserController {
         }
         int result = userService.save(record);
         if (result == 0) {
-            // return I18nUtils.getBaseResultError("operate.fail.check.param");
-            return BaseResult.error("操作失败");
+            return I18nUtils.getBaseResultError("operate.fail.check.param");
         }
-        // return I18nUtils.getBaseResultOk("operate.success");
-        return BaseResult.error("操作成功");
+        return I18nUtils.getBaseResultOk("operate.success");
     }
 
     /**
@@ -70,11 +69,9 @@ public class UserController {
     public BaseResult delete(@RequestBody List<User> records) {
         if (records.size()>0) {
             userService.delete(records);
-            // return I18nUtils.getBaseResultOkBySoleParam("delete.number.data", deleteList.size());
-            return BaseResult.error("删除成功");
+            return I18nUtils.getBaseResultOkBySoleParam("delete.number.data", records.size());
         } else {
-            // return I18nUtils.getBaseResultError("delete.no.data.check.param");
-            return BaseResult.error("删除失败");
+            return I18nUtils.getBaseResultError("delete.no.data.check.param");
         }
     }
 
@@ -119,8 +116,7 @@ public class UserController {
     public BaseResult disable(@RequestParam long id) {
         User user = userService.findById(id);
         if (BeanUtil.isEmpty(user)) {
-            // return I18nUtils.getBaseResultError("operate.fail.check.param");
-            return BaseResult.error("操作失败");
+            return I18nUtils.getBaseResultError("operate.fail.check.param");
         }
         if (null != user.getStatus()) {
             user.setStatus(user.getStatus() == ConfigConsts.DISABLE ? ConfigConsts.ENABLE : ConfigConsts.DISABLE);
@@ -129,11 +125,9 @@ public class UserController {
         }
         int result = userService.save(user);
         if (result == 0) {
-            // return I18nUtils.getBaseResultError("operate.fail.check.param");
-            return BaseResult.error("操作失败");
+            return I18nUtils.getBaseResultError("operate.fail.check.param");
         }
-        // return I18nUtils.getBaseResultOk("operate.success");
-        return BaseResult.error("删除成功");
+        return I18nUtils.getBaseResultOk("operate.success");
     }
 
     private class CheckUser {
