@@ -81,7 +81,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
+
+		<!-- 加密组件:用于项目配置文件里，所有涉及信息安全的配置项（或字段）加密处理
+		jasypt-spring-boot组件会自动将ENC()语法包裹的配置项加密字段自动解密，数据得以还原-->
+		<dependency>
+			<groupId>com.github.ulisesbocchio</groupId>
+			<artifactId>jasypt-spring-boot-starter</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+
 	</dependencies>
 
 </project>

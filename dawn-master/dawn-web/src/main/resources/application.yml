@@ -22,7 +22,7 @@ spring:
           datasourcename: dawn
           url: jdbc:mysql://127.0.0.1/${spring.datasource.druid.datasourcename}?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
           username: root
-          password: 123456
+          password: ENC(H3ol4OmwQC46MeXdUn6+Iyr1MeJdS1RWLM1IzOsZs5nj6m+d5aFiCH5KMrhc0fxL)
           filters: stat,wall,config
           max-active: 1000
           initial-size: 1
@@ -54,7 +54,7 @@ spring:
         # Redis服务器连接端口
         port: 6379
         # Redis服务器连接密码（默认为空）
-        password: 123456
+        password: ENC(U4/uq1y1a/ojtc+/8GwQEymMsQ0DNuCjKEWYScS7IJIFOUZ8ci6+oBYB8rNOm94L)
         jedis:
             pool:
                 # 连接池最大连接数（使用负值表示没有限制）
@@ -86,7 +86,17 @@ dubbo:
     consumer:
         timeout: 3000
         # 启动时检查依赖的服务是否可用，不可用时会抛出异常
-        # check: false
+        #check: false
+jasypt:
+    encryptor:
+        # 如果不愿意使用jasypt默认提供的ENC()来标记加密字段，可以换成自定义的前后缀标记，比如想换成CodeSheep()来标记加密字段，此时只需要在配置文件里配置一下前后缀即可
+        #property:
+            # 前缀
+            #prefix: CodeSheep(
+            # 后缀
+            #suffix: )
+        # jasypt会使用这个自定义加密密钥，对配置文件里的重要项进行加密(可配置在系统环境变量中，如：JASYPT_ENCRYPTOR_PASSWORD = 8uzwTTFu，这里改为jasypt.encryptor.password=${JASYPT_ENCRYPTOR_PASSWORD:})即可
+        password: 8uzwTTFu
 # 项目自定义配置项
 dawn:
     # 定时任务
