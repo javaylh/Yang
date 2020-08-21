@@ -1,4 +1,7 @@
 server:
+    # 请求路径
+    servlet:
+        context-path: /dawn
     tomcat:
         uri-encoding: UTF-8
         max-threads: 1000
