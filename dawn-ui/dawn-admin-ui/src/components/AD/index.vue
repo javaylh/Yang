@@ -13,12 +13,12 @@ export default {
   watch: {
     '$route.path': {
       handler: function(val, oldVal) {
-        this.getCodefund()
+        // this.getCodefund()
       }
     }
   },
   mounted() {
-    this.getCodefund()
+    // this.getCodefund()
   },
   methods: {
     getCodefund() {

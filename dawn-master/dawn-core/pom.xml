@@ -49,6 +49,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- spring aop -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
 		<!--热部署（无需重启应用）：需按IDEA的编译或者ctrl+f9,eclipse：ctrl+s-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

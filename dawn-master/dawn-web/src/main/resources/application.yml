@@ -70,6 +70,9 @@ spring:
     # 设置国际化配置文件存放在classpath:/i18n目录下
     messages:
         basename: i18n/messages
+# mybatis Mapper.xml存放位置
+mybatis:
+    config-location: classpath:mapper/*Mapper.xml
 # Apache Dubbo
 embedded:
     zookeeper:

@@ -16,12 +16,15 @@
 ### 组织结构
 
 ``` lua
-zheng
-├── zheng-common -- SSM框架公共模块
-├── zheng-admin -- 后台管理模板
-├── zheng-ui -- 前台thymeleaf模板[端口:1000]
-├── zheng-config -- 配置中心[端口:1001]
-├── zheng-upms -- 用户权限管理系统
+dawn-master
+├── dawn-core -- 核心jar包
+├── dawn-common -- 框架公共模块
+├── dawn-upms -- 权限管理模块[端口:8091]
+├── dawn-web -- 后台管理模板[端口:8090]
+├── dawn-service -- 公共接口模块
+├── dawn-rabbitmq -- RabbitMQ模块
+├── dawn-websocket -- WebSocket模块
+├── dawn-dubbo -- dubbo模块
 |    ├── zheng-upms-common -- upms系统公共模块
 |    ├── zheng-upms-dao -- 代码生成模块，无需开发
 |    ├── zheng-upms-client -- 集成upms依赖包，提供单点认证、授权、统一会话管理
@@ -38,7 +41,6 @@ zheng
 Spring Framework | 容器  | [http://projects.spring.io/spring-framework/](http://projects.spring.io/spring-framework/)
 SpringMVC | MVC框架  | [http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc)
 Apache Shiro | 安全框架  | [http://shiro.apache.org/](http://shiro.apache.org/)
-Spring session | 分布式Session管理  | [http://projects.spring.io/spring-session/](http://projects.spring.io/spring-session/)
 MyBatis | ORM框架  | [http://www.mybatis.org/mybatis-3/zh/index.html](http://www.mybatis.org/mybatis-3/zh/index.html)
 
 
@@ -78,21 +80,18 @@ Spring+SpringMVC+Mybatis框架集成公共模块，包括公共配置、MybatisG
 
 #### 开发工具:
 - MySql: 数据库
-- jetty: 开发服务器
 - Tomcat: 应用服务器
-- SVN|Git: 版本管理
+- Git: 版本管理
 - Nginx: 反向代理服务器
-- Varnish: HTTP加速器
 - IntelliJ IDEA: 开发IDE
-- PowerDesigner: 建模工具
 - Navicat for MySQL: 数据库客户端
 
 #### 开发环境：
-- Jdk7+
+- Jdk8+
 - Mysql5.5+
 - Redis
 - Zookeeper
-- ActiveMQ
+- RabbitMQ
 - Dubbo-admin
 - Dubbo-monitor
 

@@ -27,6 +27,7 @@
 		<module>dawn-websocket</module>
 		<module>dawn-dubbo</module>
 		<module>dawn-upms</module>
+		<module>dawn-shiro</module>
     </modules>
 
 </project>

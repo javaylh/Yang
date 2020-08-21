@@ -1,5 +1,5 @@
 <template>
-  <div id="container_id" class="login-container">
+  <div id="container_id" :class="'login-container ' + 'login-container-back' + randomNumber">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
 
       <div class="title-container">
@@ -81,7 +81,7 @@
       <div class="windmill_div">
         <img id="windmill_id" class="windmill_img" src="../../../static/img/windmill.png" @click="changImage()">
       </div>
-      <i class="windmill_i"></i>
+      <i class="windmill_i" />
     </div>
   </div>
 </template>
@@ -124,7 +124,9 @@ export default {
       showDialog: false,
       redirect: undefined,
       otherQuery: {},
-      rotate: 0
+      rotate: 0,
+      // 随机一个数，用以切换背景图片
+      randomNumber: -1
     }
   },
   watch: {
@@ -154,13 +156,13 @@ export default {
   },
   methods: {
     changImage() {
-      // 首先随机生成一个随机数0~10 
-      // var num = Math.round(Math.random() * 10)
-      var path = 'url(./dawn-admin-web/assets/static/img/2.jpg)'
+      // 首先随机生成一个随机数0~10
+      this.randomNumber = Math.round(Math.random() * 10)
+      // var path = 'url(../../../assets/img/2.jpg)'
       this.rotate = (this.rotate + 90) % 360
-      document.getElementById('windmill_id').style.animation = 'mymove 2s infinite'
-      document.getElementById('windmill_id').style.transform = 'rotate(-' + this.rotate + 'deg)'
-      document.getElementById('container_id').style.backgroundImage = path
+      // document.getElementById('windmill_id').style.animation = 'mymove 2s infinite'
+      // document.getElementById('windmill_id').style.transform = 'rotate(-' + this.rotate + 'deg)'
+      // document.getElementById('container_id').style.backgroundImage = path
     },
     checkCapslock({ shiftKey, key } = {}) {
       if (key && key.length === 1) {
@@ -192,6 +194,22 @@ export default {
             .then(() => {
               this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
               this.loading = false
+              const hour = new Date().getHours()
+              var msg = ''
+              if (hour < 11) {
+                msg = this.$t('login.morning')
+              } else if (hour < 14) {
+                msg = this.$t('login.noon')
+              } else if (hour < 18) {
+                msg = this.$t('login.afternoon')
+              } else if (hour < 24) {
+                msg = this.$t('login.night')
+              }
+              this.$message({
+                showClose: true,
+                message: msg + ', ' + this.$t('login.welcomeMsg'),
+                type: 'success'
+              })
             })
             .catch(() => {
               this.loading = false
@@ -283,12 +301,47 @@ $cursor: #fff;
 $bg:#0f59a4;
 $dark_gray:#889aa4;
 $light_gray:#eee;
-
+.login-container-back-1 {
+  background-image: url('../../../static/img/login.jpg');
+}
+.login-container-back0 {
+  background-image: url('../../../static/img/0.jpg');
+}
+.login-container-back1 {
+  background-image: url('../../../static/img/1.jpg');
+}
+.login-container-back2 {
+  background-image: url('../../../static/img/2.jpg');
+}
+.login-container-back3 {
+  background-image: url('../../../static/img/3.jpg');
+}
+.login-container-back4 {
+  background-image: url('../../../static/img/4.jpg');
+}
+.login-container-back5 {
+  background-image: url('../../../static/img/5.jpg');
+}
+.login-container-back6 {
+  background-image: url('../../../static/img/6.jpg');
+}
+.login-container-back7 {
+  background-image: url('../../../static/img/7.jpg');
+}
+.login-container-back8 {
+  background-image: url('../../../static/img/8.jpg');
+}
+.login-container-back9 {
+  background-image: url('../../../static/img/9.jpg');
+}
+.login-container-back10 {
+  background-image: url('../../../static/img/10.jpg');
+}
 .login-container {
   min-height: 100%;
   width: 100%;
   // background-color: $bg;
-  background-image: url('../../../static/img/login.jpg');
+  // background-image: url('../../../static/img/login.jpg');
   opacity: 0.95;
   overflow: hidden;
 

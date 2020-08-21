@@ -81,7 +81,14 @@ export default {
     password: 'Contraseña',
     any: 'nada',
     thirdparty: 'Conectar con',
-    thirdpartyTips: 'No se puede simular en local, así que combine su propia simulación de negocios. ! !'
+    thirdpartyTips: 'No se puede simular en local, así que combine su propia simulación de negocios. ! !',
+    morning: 'Buenos días',
+    noon: 'Buenas tardes',
+    afternoon: 'Buenas tardes',
+    night: 'Buenas noches',
+    welcomeTitle: 'Bienvenida',
+    welcomeMsg: 'Bienvenido volver',
+    switchLagSuf: 'Cambio de idioma'
   },
   documentation: {
     documentation: 'Documentación',

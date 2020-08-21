@@ -1,6 +1,6 @@
 package com.dawn.common.base;
 
-import cn.hutool.http.HttpStatus;
+import com.dawn.common.enums.ErrorCodeEnum;
 import lombok.Data;
 
 /**
@@ -14,21 +14,30 @@ import lombok.Data;
 @Data
 public class BaseResult {
 
-    private int code = HttpStatus.HTTP_OK;
+    private String code = ErrorCodeEnum.OK.getCode();
 
     private String msg;
 
     private Object data;
 
     public static BaseResult error() {
-        return error(HttpStatus.HTTP_INTERNAL_ERROR, "未知异常，请联系管理员");
+        return error(ErrorCodeEnum.A0001.getCode(), "未知异常，请联系管理员");
     }
 
     public static BaseResult error(String msg) {
-        return error(HttpStatus.HTTP_INTERNAL_ERROR, msg);
+        return error(ErrorCodeEnum.A0001.getCode(), msg);
     }
 
-    public static BaseResult error(int code, String msg) {
+    /**
+     * 返回错误消息
+     * @param errorCodeEnum 错误信息枚举类
+     * @return 警告消息
+     */
+    public static BaseResult error(ErrorCodeEnum errorCodeEnum) {
+        return error(errorCodeEnum.getCode(), errorCodeEnum.getMsg());
+    }
+
+    public static BaseResult error(String code, String msg) {
         BaseResult r = new BaseResult();
         r.setCode(code);
         r.setMsg(msg);
@@ -53,7 +62,8 @@ public class BaseResult {
         r.setData(data);
         return r;
     }
-    public static BaseResult ok(int code, String msg, Object data) {
+
+    public static BaseResult ok(String code, String msg, Object data) {
         BaseResult r = new BaseResult();
         r.setCode(code);
         r.setMsg(msg);

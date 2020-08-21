@@ -56,6 +56,12 @@
 			<version>0.0.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.dawn</groupId>
+			<artifactId>dawn-shiro</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
 		<!-- 二维码相关依赖 -->
 		<dependency>
 			<groupId>com.google.zxing</groupId>

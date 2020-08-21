@@ -35,4 +35,9 @@ public class ConfigConsts {
      */
     public final static int DISABLE = 0;
 
+    /**
+     * token的标识
+     */
+    public final static String TOKEN_NAME = "token";
+
 }

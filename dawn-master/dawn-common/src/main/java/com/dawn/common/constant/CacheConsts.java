@@ -11,6 +11,16 @@ package com.dawn.common.constant;
 public class CacheConsts {
 
     /**
+     * 用户登录后的Token过期时长
+     */
+    public final static String USER_TOKEN_CACHE = "userTokenCache";
+
+    /**
+     * 用户登录后的Token缓存名称
+     */
+    public final static String USER_TOKEN_CACHE2 = "userTokenCache";
+
+    /**
      * 系统用户使用的缓存名称
      */
     public final static String USER_CACHE = "userCache";

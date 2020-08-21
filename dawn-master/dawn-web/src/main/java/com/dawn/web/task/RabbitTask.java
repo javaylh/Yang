@@ -36,10 +36,10 @@ public class RabbitTask {
     public void taskSendRabbit() {
         // 这个就是判断这个count在redis里面是否存在
         if (redisService.hasKey("count")) {
-            count = Integer.valueOf(redisService.get("count"));
+            count = Integer.valueOf(redisService.getValue("count").toString());
             count++;
         }
-        redisService.set("count", count.toString());
+        redisService.setValue("count", count.toString());
         asyncDawnTask.taskDawnExecutor();
     }
 

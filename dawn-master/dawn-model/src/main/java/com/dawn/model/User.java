@@ -58,6 +58,9 @@ public class User implements Serializable {
 	private Integer type;
 
 	/** 邮箱 */
+	private String phone;
+
+	/** 邮箱 */
 	private String email;
 
 	/** 用户头像 */

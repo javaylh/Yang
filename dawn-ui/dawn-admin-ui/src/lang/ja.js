@@ -80,7 +80,14 @@ export default {
     password: 'パスワード',
     any: 'password',
     thirdparty: '外部IDでログイン',
-    thirdpartyTips: 'ローカル環境ではログインできません。実装が必要です。'
+    thirdpartyTips: 'ローカル環境ではログインできません。実装が必要です。',
+    morning: '朝はい',
+    noon: '昼ごろはい',
+    afternoon: '午後はい',
+    night: '夜はい',
+    welcomeTitle: '歓迎する',
+    welcomeMsg: 'お帰りなさい',
+    switchLagSuf: '言語切り替え成功'
   },
   documentation: {
     documentation: 'ドキュメント',

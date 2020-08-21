@@ -81,7 +81,14 @@ export default {
     password: '密码',
     any: '随便填',
     thirdparty: '第三方登录',
-    thirdpartyTips: '本地不能模拟，请结合自己业务进行模拟！！！'
+    thirdpartyTips: '本地不能模拟，请结合自己业务进行模拟！！！',
+    morning: '早上好',
+    noon: '中午好',
+    afternoon: '下午好',
+    night: '晚上好',
+    welcomeTitle: '欢迎',
+    welcomeMsg: '欢迎回来',
+    switchLagSuf: '切换语言成功'
   },
   documentation: {
     documentation: '文档',

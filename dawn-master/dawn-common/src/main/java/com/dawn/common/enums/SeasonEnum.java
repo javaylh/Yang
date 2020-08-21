@@ -11,19 +11,31 @@ package com.dawn.common.enums;
 public enum SeasonEnum {
 
     /** 春 */
-    SPRING(1),
+    SPRING(1,"春"),
 
     /** 夏 */
-    SUMMER(2),
+    SUMMER(2,"夏"),
 
     /** 秋 */
-    AUTUMN(3),
+    AUTUMN(3,"秋"),
 
     /** 冬 */
-    WINTER(4);
+    WINTER(4,"冬");
 
-    public int seq;
+    private final int code;
+    private final String info;
 
-    SeasonEnum(int seq) { this.seq = seq; }
+    SeasonEnum(int code, String info) {
+        this.code = code;
+        this.info = info;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getInfo() {
+        return info;
+    }
 
 }

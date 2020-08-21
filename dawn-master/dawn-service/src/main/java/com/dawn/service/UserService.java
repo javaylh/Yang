@@ -23,4 +23,18 @@ public interface UserService extends ServiceCurdService<User> {
     */
     List<User> findList(Map map);
 
+    /**
+     * 根据用户名查询
+     * @param userName
+     * @return
+     */
+    User findByUserName(String userName);
+
+    /**
+     * 根据手机号查询
+     * @param phone
+     * @return
+     */
+    User findByUserPhone(String phone);
+
 }
